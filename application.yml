@@ -33,7 +33,7 @@ plugins:
       - TVHTML5_SIMPLY
     oauth:
       enabled: true  # forces the link generation handshake on boot
-      # refreshToken: "" -> leave this completely commented out on your first initialization boot
+      refreshToken: "${YOUTUBE_ACCESS_TOKEN}"
 
   lavasrc:
     providers:
