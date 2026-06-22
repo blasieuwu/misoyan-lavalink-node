@@ -16,6 +16,7 @@ lavalink:
   
   server:
     password: "${LAVALINK_SERVER_PASSWORD}" # "i need the password"
+    sources:
       youtube: false # whatever makes it work i guess - blasie
       soundcloud: true
       bandcamp: true
