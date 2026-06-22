@@ -35,6 +35,10 @@ plugins:
       enabled: true  # forces the link generation handshake on boot
       refreshToken: "${YOUTUBE_ACCESS_TOKEN}"
 
+    remoteCipher:
+      url: "https://cipher.kikkia.dev/"
+      userAgent: "blasieuwu-misoyan"
+
   lavasrc:
     providers:
       - "ytsearch:\"%artist% - %title%\""
