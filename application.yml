@@ -1,8 +1,3 @@
-# prevent it from sending the audio through the other udp ports
-lavalink-proxy:
-  enabled: true
-  endpoint: "https://proxy.lavalink.dev"
-
 server:
   port: ${PORT:10000}
   address: 0.0.0.0
@@ -16,7 +11,7 @@ lavalink:
   
   server:
     password: "${LAVALINK_SERVER_PASSWORD}" # "i need the password"
-    sources:
+    sources: 
       youtube: false # whatever makes it work i guess - blasie
       soundcloud: true
       bandcamp: true
@@ -24,6 +19,9 @@ lavalink:
       vimeo: true
       http: true
       local: false
+    koe:
+      gateway: v4 
+      transport: tcp # "fuck udp routing let's use tcp" - blasie
 
 plugins:
   youtube:
