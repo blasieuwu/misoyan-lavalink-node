@@ -1,3 +1,8 @@
+# prevent it from sending the audio through the other udp ports
+lavalink-proxy:
+  enabled: true
+  endpoint: "https://proxy.lavalink.dev"
+
 server:
   port: ${PORT:10000}
   address: 0.0.0.0
@@ -5,14 +10,13 @@ server:
 lavalink:
   plugins:
     - dependency: "dev.lavalink.youtube:youtube-plugin:1.18.1"
-      snapshot: false # 🛠️ FIXED FOR LAVALINK V4 COMPATIBILITY RULES
+      snapshot: false
     - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.8.3"
       snapshot: false
   
   server:
-    password: "${LAVALINK_SERVER_PASSWORD}" # 🔑 FIXED: moved out of the web server block into the engine block
-    sources:
-      youtube: false # legacy built-in driver is officially disabled
+    password: "${LAVALINK_SERVER_PASSWORD}" # "i need the password"
+      youtube: false # whatever makes it work i guess - blasie
       soundcloud: true
       bandcamp: true
       twitch: true
@@ -20,7 +24,6 @@ lavalink:
       http: true
       local: false
 
-# 🚀 PLUGINS MUST EXIST AT ROOT LEVEL - ADJUSTED LOGIC TRACKING
 plugins:
   youtube:
     enabled: true
@@ -28,11 +31,11 @@ plugins:
     allowDirectVideoIds: true
     allowDirectPlaylistIds: true
     clients:
-      - TV         # 🚀 REQUIRED FOR OAUTH FLOW AND AUDIO STREAMING
-      - MUSIC      # kept secondary to catch ytmsearch metadata tracking
+      - TV         
+      - MUSIC      
       - TVHTML5_SIMPLY
     oauth:
-      enabled: true  # forces the link generation handshake on boot
+      enabled: true  # "whatever lets the node work" - blasie
       refreshToken: "${YOUTUBE_ACCESS_TOKEN}"
 
     remoteCipher:
@@ -49,7 +52,6 @@ plugins:
       soundcloud: true
       youtube: true
 
-# 📝 standard logger routing to keep track of container state
 logging:
   level:
     root: info
