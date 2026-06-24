@@ -35,7 +35,7 @@ plugins:
       - TVHTML5_SIMPLY
     oauth:
       enabled: true  # "whatever lets the node work" - blasie
-      refreshToken: "${YOUTUBE_ACCESS_TOKEN}"
+      refreshToken: ${YOUTUBE_ACCESS_TOKEN}
 
     remoteCipher:
       url: "https://cipher.kikkia.dev/"
