@@ -1,0 +1,59 @@
+server:
+  port: 10000
+  address: 0.0.0.0
+
+lavalink:
+  pluginsDir: "./plugins"
+  defaultPluginRepository: "https://maven.lavalink.dev/releases"
+  # we can dynamically install the youtube plugin here if needed later, 
+  # but by default lavalink v4 has native playback sources ready.
+  plugins: []
+  server:
+    password: "${SERVER_PASSWORD}"
+    sources:
+      youtube: true
+      bandcamp: true
+      soundcloud: true
+      twitch: true
+      vimeo: true
+      http: true
+      local: false
+    filters:
+      volume: true
+      equalizer: true
+      karoke: true
+      timescale: true
+      tremolo: true
+      vibrato: true
+      rotation: true
+      distortion: true
+      channelMix: true
+      lowPass: true
+    bufferDurationMs: 400
+    frameBufferDurationMs: 5000
+    opusEncodingQuality: 10
+    resamplingQuality: LOW
+    trackStuckThresholdMs: 10000
+    gc-warnings: true
+
+metrics:
+  prometheus:
+    enabled: false
+    endpoint: /metrics
+
+sentry:
+  dsn: ""
+  environment: ""
+
+logging:
+  file:
+    path: ./logs/
+
+  level:
+    root: INFO
+    lavalink: INFO
+
+  logback:
+    rollingpolicy:
+      max-history: 30
+      max-size: 1GB
