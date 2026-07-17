@@ -5,11 +5,15 @@ server:
 lavalink:
   pluginsDir: "./plugins"
   defaultPluginRepository: "https://maven.lavalink.dev/releases"
+  
+  # actual plugin dependency injection
+  plugins:
+    - dependency: "dev.lavalink.youtube:youtube-plugin:1.18.1"
 
   server:
     password: "${SERVER_PASSWORD}"
     sources:
-      youtube: true
+      youtube: false # legacy built-in youtube source disabled!
       bandcamp: true
       soundcloud: true
       twitch: true
@@ -44,13 +48,11 @@ plugins:
       - MUSIC
       - ANDROID_MUSIC
       - WEB
-      - TVHTML5_SIMPLY # TVHTML5EMBEDDED is deprecated in newer plugin versions, use this instead!
+      - TVHTML5_SIMPLY
     
-    # oauth configuration
     oauth:
       enabled: true
 
-    # the public cipher resolver
     remoteCipher:
       url: "https://cipher.kikkia.dev/"
 
