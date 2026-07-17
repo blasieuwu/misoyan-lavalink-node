@@ -5,9 +5,7 @@ server:
 lavalink:
   pluginsDir: "./plugins"
   defaultPluginRepository: "https://maven.lavalink.dev/releases"
-  # we can dynamically install the youtube plugin here if needed later, 
-  # but by default lavalink v4 has native playback sources ready.
-  plugins: []
+
   server:
     password: "${SERVER_PASSWORD}"
     sources:
@@ -35,6 +33,26 @@ lavalink:
     resamplingQuality: LOW
     trackStuckThresholdMs: 10000
     gc-warnings: true
+
+plugins:
+  youtube:
+    enabled: true
+    allowSearch: true
+    allowDirectVideoIds: true
+    allowDirectPlaylistIds: true
+    clients:
+      - MUSIC
+      - ANDROID_MUSIC
+      - WEB
+      - TVHTML5_SIMPLY # TVHTML5EMBEDDED is deprecated in newer plugin versions, use this instead!
+    
+    # oauth configuration
+    oauth:
+      enabled: true
+
+    # the public cipher resolver
+    remoteCipher:
+      url: "https://cipher.kikkia.dev/"
 
 metrics:
   prometheus:
