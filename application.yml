@@ -52,7 +52,7 @@ plugins:
     
     oauth:
       enabled: true
-
+      refreshToken: "${REFRESH_TOKEN}"
     remoteCipher:
       url: "https://cipher.kikkia.dev/"
 
