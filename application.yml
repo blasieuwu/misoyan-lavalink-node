@@ -53,29 +53,28 @@ plugins:
   youtube:
     enabled: true
     clients:
-      - TV
       - MUSIC
-      - ANDROID_VR
       - WEB
       - MWEB
-      - TVHTML5_SIMPLY
-    # this is where we execute the split-horizon routing strategy
+      - TV
+    # "let's strategize"
     clientOptions:
-      WEB:
-        playback: true
-        videoLoading: true
-      MWEB:
-        playback: true
-        videoLoading: true
       MUSIC:
-        playback: true
+        playback: false      # <- CANNOT play (no sign-in prompts)
+        videoLoading: false
+        searching: true      # <- CAN handle text queries/metadata
+      WEB:
+        playback: false      # <- CANNOT play
+        videoLoading: false
+        searching: true      # <- CAN handle text queries/metadata
+      MWEB:
+        playback: false      # <- CANNOT play
+        videoLoading: false
+        searching: true      # <- CAN handle text queries/metadata
+      TV:
+        playback: true       # <- WILL handle all audio streaming (uses OAuth)
         videoLoading: true
-      ANDROID_VR:
-        playback: true
-        videoLoading: true
-      TVHTML5_SIMPLY:
-        playback: true
-        videoLoading: true
+        searching: false     # <- cannot search (failsafe)
     
     oauth:
       enabled: true
