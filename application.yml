@@ -49,19 +49,23 @@ plugins:
     clients:
       - TV
       - MUSIC
-      - ANDROID_MUSIC
+      - ANDROID_VR
       - WEB
+      - MWEB
       - TVHTML5_SIMPLY
     # this is where we execute the split-horizon routing strategy
     clientOptions:
       WEB:
-        playback: false
+        playback: true
+        videoLoading: false
+      MWEB:
+        playback: true
         videoLoading: false
       MUSIC:
         playback: false
         videoLoading: false
-      ANDROID_MUSIC:
-        playback: false
+      ANDROID_VR:
+        playback: true
         videoLoading: false
       TVHTML5_SIMPLY:
         playback: false
