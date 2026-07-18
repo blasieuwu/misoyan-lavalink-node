@@ -73,7 +73,10 @@ logging:
 
   level:
     root: INFO
-    lavalink: INFO
+    dev.lavalink.youtube: TRACE
+    dev.lavalink.youtube.clients: TRACE
+    dev.lavalink.youtube.http.YoutubeAccessTokenTracker: DEBUG
+    com.sedmelluq.discord.lavaplayer: DEBUG
 
   logback:
     rollingpolicy:
