@@ -38,6 +38,11 @@ lavalink:
     trackStuckThresholdMs: 10000
     gc-warnings: true
 
+    koe:
+      useEpoll: true
+      gateway:
+        v2: true
+
 plugins:
   youtube:
     enabled: true
