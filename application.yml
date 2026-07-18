@@ -41,15 +41,26 @@ lavalink:
 plugins:
   youtube:
     enabled: true
-    allowSearch: true
-    allowDirectVideoIds: true
-    allowDirectPlaylistIds: true
     clients:
       - TV
       - MUSIC
       - ANDROID_MUSIC
       - WEB
       - TVHTML5_SIMPLY
+    # this is where we execute the split-horizon routing strategy
+    clientOptions:
+      WEB:
+        playback: false
+        videoLoading: false
+      MUSIC:
+        playback: false
+        videoLoading: false
+      ANDROID_MUSIC:
+        playback: false
+        videoLoading: false
+      TVHTML5_SIMPLY:
+        playback: false
+        videoLoading: false
     
     oauth:
       enabled: true
