@@ -62,14 +62,14 @@ plugins:
         playback: true
         videoLoading: true
       MUSIC:
-        playback: false
-        videoLoading: false
+        playback: true
+        videoLoading: true
       ANDROID_VR:
         playback: true
         videoLoading: true
       TVHTML5_SIMPLY:
-        playback: false
-        videoLoading: false
+        playback: true
+        videoLoading: true
     
     oauth:
       enabled: true
