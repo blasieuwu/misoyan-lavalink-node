@@ -56,25 +56,29 @@ plugins:
       - MUSIC
       - WEB
       - MWEB
+      - ANDROID_VR   # <- injected right before TV
       - TV
-    # "let's strategize"
     clientOptions:
       MUSIC:
-        playback: false      # <- CANNOT play (no sign-in prompts)
+        playback: false
         videoLoading: false
-        searching: true      # <- CAN handle text queries/metadata
+        searching: true
       WEB:
-        playback: false      # <- CANNOT play
+        playback: false
         videoLoading: false
-        searching: true      # <- CAN handle text queries/metadata
+        searching: true
       MWEB:
-        playback: false      # <- CANNOT play
+        playback: false
         videoLoading: false
-        searching: true      # <- CAN handle text queries/metadata
-      TV:
-        playback: true       # <- WILL handle all audio streaming (uses OAuth)
+        searching: true
+      ANDROID_VR:
+        playback: true       # <- enable this for clean audio streaming
         videoLoading: true
-        searching: false     # <- cannot search (failsafe)
+        searching: false
+      TV:
+        playback: true       # <- keeps working as our fallback safety net
+        videoLoading: true
+        searching: false
     
     oauth:
       enabled: true
