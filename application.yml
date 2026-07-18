@@ -54,8 +54,8 @@ plugins:
     enabled: true
     clients:
       - MUSIC
-      - WEB
       - MWEB
+      - WEB
       - ANDROID_VR   # <- injected right before TV
       - TV
     clientOptions:
@@ -63,18 +63,18 @@ plugins:
         playback: false
         videoLoading: false
         searching: true
-      WEB:
+      MWEB:
         playback: false
         videoLoading: false
         searching: true
-      MWEB:
+      WEB:
         playback: false
         videoLoading: false
         searching: true
       ANDROID_VR:
         playback: true       # <- enable this for clean audio streaming
         videoLoading: true
-        searching: false
+        searching: true
       TV:
         playback: true       # <- keeps working as our fallback safety net
         videoLoading: true
