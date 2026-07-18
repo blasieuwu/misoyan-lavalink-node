@@ -80,7 +80,7 @@ plugins:
     oauth:
       enabled: true
       refreshToken: "${REFRESH_TOKEN}"
-      skipInitialization: true
+      skipInitialization: false
     remoteCipher:
       url: "https://cipher.kikkia.dev/"
       userAgent: "blasieuwu-misoyan"
