@@ -56,9 +56,6 @@ plugins:
       skipInitialization: true
     remoteCipher:
       url: "https://cipher.kikkia.dev/"
-    pot:
-      token: "${YT_PO_TOKEN}"
-      visitorData: "${YT_VISITOR_DATA}"
 
 metrics:
   prometheus:
