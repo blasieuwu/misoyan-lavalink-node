@@ -64,8 +64,8 @@ plugins:
         videoLoading: false
         searching: true
       MWEB:
-        playback: false
-        videoLoading: false
+        playback: true       # <- set this to true so cuz yes
+        videoLoading: true
         searching: true
       WEB:
         playback: false
@@ -83,7 +83,7 @@ plugins:
     oauth:
       enabled: true
       refreshToken: "${REFRESH_TOKEN}"
-      skipInitialization: true
+      skipInitialization: false
     remoteCipher:
       url: "https://cipher.kikkia.dev/"
       userAgent: "blasieuwu-misoyan"
