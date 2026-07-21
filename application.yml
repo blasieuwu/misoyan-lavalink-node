@@ -58,25 +58,25 @@ plugins:
       - WEB
       - ANDROID_VR   # <- injected right before TV
       - TV
-    clientOptions:
+    clientOptions: # set everything except music client to be able to play music
       MUSIC:
         playback: false
         videoLoading: false
         searching: true
       MWEB:
-        playback: true       # <- set this to true so cuz yes
+        playback: true
         videoLoading: true
         searching: true
       WEB:
-        playback: false
-        videoLoading: false
+        playback: true
+        videoLoading: true
         searching: true
       ANDROID_VR:
-        playback: true       # <- enable this for clean audio streaming
+        playback: true
         videoLoading: true
         searching: true
       TV:
-        playback: true       # <- keeps working as our fallback safety net
+        playback: true
         videoLoading: true
         searching: false
     
