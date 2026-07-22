@@ -54,36 +54,42 @@ plugins:
     enabled: true
     clients:
       - MUSIC
+      - TVHTML5EMBEDDED
+      - TV
+      - ANDROID_VR
       - MWEB
       - WEB
-      - ANDROID_VR   # <- injected right before TV
-      - TV
-    clientOptions: # set everything except music client to be able to play music
+    clientOptions:
       MUSIC:
         playback: false
         videoLoading: false
         searching: true
-      MWEB:
+      TVHTML5EMBEDDED:
         playback: true
         videoLoading: true
-        searching: true
-      WEB:
-        playback: true
-        videoLoading: true
-        searching: true
-      ANDROID_VR:
-        playback: true
-        videoLoading: true
-        searching: true
+        searching: false
       TV:
         playback: true
         videoLoading: true
         searching: false
-    
+      ANDROID_VR:
+        playback: true
+        videoLoading: true
+        searching: false
+      MWEB:
+        playback: false
+        videoLoading: true
+        searching: true
+      WEB:
+        playback: false
+        videoLoading: true
+        searching: true
+
     oauth:
       enabled: true
       refreshToken: "${REFRESH_TOKEN}"
       skipInitialization: false
+
     remoteCipher:
       url: "https://cipher.kikkia.dev/"
       userAgent: "blasieuwu-misoyan"
